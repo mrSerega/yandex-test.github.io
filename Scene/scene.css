@@ -1,13 +1,14 @@
-
+.scene__header{
+    width: 100%;
+    height: 10%;
+    font-family: Arial;
+    font-size: 30pt;
+}
 
 /* Портретная ориентация шаблона */
 @media screen and (min-aspect-ratio: 1/10) and (max-aspect-ratio: 3/2){
 
-    .scene__header{
-        width: 100%;
-        height: 20%;
-        font-family: Arial;
-    }
+
     
     .scene__progress{
         width: 50%;
@@ -21,6 +22,7 @@
     }
     
     .scene__container_progress{
+        margin-top: 10%;
         width: 100%;
         height: 40%;
          display: flex;
@@ -45,13 +47,7 @@
 
 /* Ландшафтная ориентация шаблона*/
 @media screen and (max-aspect-ratio: 10/1) and (min-aspect-ratio: 3/2){
-    
-    .scene__header{
-        width: 100%;
-        height: 10%;
-        font-family: Arial;
-    }
-    
+        
     .scene__progress{
         width: 50%;
         height: 50%;

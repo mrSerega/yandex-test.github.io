@@ -1,13 +1,25 @@
 .progress__round{
     animation: spin  20s linear infinite both;
+    -webkit-animation: spin  20s linear infinite both;
+    -o-animation: spin  20s linear infinite both;
+    -moz-animation: spin  20s linear infinite both;
+    -ms-animation: spin  20s linear infinite both;
 }
 
 .progress__round_mode_active{
     animation-play-state: running;
+    -webkit-animation: running;
+    -o-animation: running;
+    -moz-animation: running;
+    -ms-animation: running;    
 }
 
 .progress__round_mode_inactive{
     animation-play-state: paused;
+    -webkit-animation: paused;
+    -o-animation: paused;
+    -moz-animation: paused;
+    -ms-animation: paused; 
 }
 
 @keyframes spin{

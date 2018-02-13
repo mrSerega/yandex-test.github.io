@@ -1,0 +1,54 @@
+
+
+/* Портретная ориентация шаблона */
+@media screen and (min-aspect-ratio: 1/10) and (max-aspect-ratio: 3/2){
+
+    .scene__header{
+        width: 100vw;
+        height: 10vh;
+        font-family: Arial;
+    }
+    
+    .scene__progress{
+        width: 50%;
+        height: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .scene__manager{
+        width: 50%;
+        height: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        vertical-align: middle;
+    }
+    
+
+}
+
+/* Ландшафтная ориентация шаблона*/
+@media screen and (max-aspect-ratio: 10/1) and (min-aspect-ratio: 3/2){
+    
+    .scene__header{
+        width: 100vw;
+        height: 10vh;
+        font-family: Arial;
+    }
+    
+    .scene__progress{
+        width: 50%;
+        height: 50%;
+        float: left;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .scene__manager{
+        width: 47vw;
+        height: 90vh;
+        float: right;
+        top: 0; 
+        vertical-align: middle;
+    }
+}

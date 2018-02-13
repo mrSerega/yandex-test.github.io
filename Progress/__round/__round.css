@@ -1,0 +1,20 @@
+.progress__round{
+    animation: spin  20s linear infinite both;
+}
+
+.progress__round_mode_active{
+    animation-play-state: running;
+}
+
+.progress__round_mode_inactive{
+    animation-play-state: paused;
+}
+
+@keyframes spin{
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}

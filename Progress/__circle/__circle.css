@@ -1,0 +1,75 @@
+:root{
+    --from: 0;
+    --to: 0;
+}
+
+.progress__circle{
+    fill:none;
+    stroke-width:5;
+    stroke-miterlimit:10;
+}
+
+.progress__circle_bar{
+    stroke:#FFD700;
+}
+
+.progress__circle_back{
+    stroke:#808080;
+}
+
+.progress__circle_bar-mode_animate{
+    animation: change-state 0.5s linear both;
+    -webkit-animation: change-state 0.5s linear both;
+    -o-animation: change-state 0.5s linear both;
+    -moz-animation: change-state 0.5s linear both;
+    -ms-animation: change-state 0.5s linear both;
+}
+
+.progress__circle_bar-mode_const{
+    stroke-dasharray: var(--to),2000;
+}
+
+@keyframes change-state{
+    from{
+        stroke-dasharray: var(--from),2000;
+    }
+    to{
+        stroke-dasharray: var(--to),2000;
+    }
+}
+
+@-webkit-keyframes change-state{
+    from{
+        stroke-dasharray: var(--from),2000;
+    }
+    to{
+        stroke-dasharray: var(--to),2000;
+    }
+}
+
+@-o-keyframes change-state{
+    from{
+        stroke-dasharray: var(--from),2000;
+    }
+    to{
+        stroke-dasharray: var(--to),2000;
+    }
+}
+
+@-moz-keyframes change-state{
+    from{
+        stroke-dasharray: var(--from),2000;
+    }
+    to{
+        stroke-dasharray: var(--to),2000;
+    }
+}
+
+@-ms-keyframes change-state{
+    from{
+        stroke-dasharray: var(--from),2000;
+    }
+    to{
+        stroke-dasharray: var(--to),2000;
+    }
+}

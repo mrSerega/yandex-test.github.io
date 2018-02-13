@@ -17,17 +17,22 @@
     
     <div class='scene'>
         
-        <div class='header scene__header'></div>
+        <div class='header scene__header'>Progress</div>
         
-        <div class='progress scene__progress'></div>
-
-        <div class='manager scene__manager'>
-            <p align = 'middle'> <input id='input' class='number-input' type='number' min='0' max='100' maxlength="3"> Value</p>
-            <p align = 'middle'> <input type='checkbox' class='ios8-switch ios8-switch-lg' id='round_inpt'>
-            <label for='round_inpt'>Animate</label> </p>
-            <p align = 'middle'> <input type='checkbox' class='ios8-switch ios8-switch-lg' id='hide_inpt'>
-            <label for='hide_inpt'>Hide</label> </p>         
+        <div class='container scene__container_progress'>
+            <div class='progress scene__progress'></div>
         </div>
+
+        <div class="container scene__container_manager">
+            <div class='manager scene__manager'>
+                <p align = 'left'> <input id='input' class='number-input' type='number' min='0' max='100' maxlength="3"> Value</p>
+                <p align = 'left'> <input type='checkbox' class='ios8-switch ios8-switch-lg' id='round_inpt'>
+                <label for='round_inpt'>Animate</label> </p>
+                <p align = 'left'> <input type='checkbox' class='ios8-switch ios8-switch-lg' id='hide_inpt'>
+                <label for='hide_inpt'>Hide</label> </p>         
+            </div>
+        </div>
+        
     </div>
     
     

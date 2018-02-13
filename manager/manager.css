@@ -1,0 +1,148 @@
+.switch + label {
+    position: relative;
+    padding: 5px 0 0 50px;
+    line-height: 2.0em;
+}
+
+.switch + label:before {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 40px; /* x*5 */
+    height: 24px; /* x*3 */
+    border-radius: 16px; /* x*2 */
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.switch + label:hover:after {
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.switch:checked + label:after {
+    margin-left: 16px;
+}
+.switch:checked + label:before {
+    background: #55D069;
+}
+
+.switch-lg + label:hover:after {
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+
+.switch + label:after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0px;
+    top: 0px;
+    width: 24px; /* x*3 */
+    height: 24px; /* x*3 */
+    border-radius: 16px; /* x*2 */
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+@media screen and (orientation:landscape) {
+
+    .switch {
+        position: absolute;
+        margin: 8px 0 0 16px;    
+    }
+    
+    /* LARGE */
+
+    .switch-lg {
+        margin: 10px 0 0 20px;
+    }
+    .switch-lg + label {
+        position: relative;
+        padding: 7px 0 0 60px;
+        line-height: 2.3em;
+    }
+    .switch-lg + label:before {
+        width: 50px; /* x*5 */
+        height: 30px; /* x*3 */
+        border-radius: 20px; /* x*2 */
+    }
+    .switch-lg + label:after {
+        width: 30px; /* x*3 */
+        height: 30px; /* x*3 */
+        border-radius: 20px; /* x*2 */
+    }
+
+    .switch-lg:checked + label:after {
+        margin-left: 20px; /* x*2 */
+    }
+
+    /*  ------------------- Number --------------------------*/
+
+    .number-input{
+        font-size: 20px;
+        border-radius: 20px;
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
+        width: 50px;
+        background: #fff;
+        border: 1px solid #d9d9d9;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+    
+}
+
+@media screen and (orientation:portrait){
+    .switch {
+        position: absolute;
+        margin: 16px 0 0 32px;    
+    }
+
+    /* LARGE */
+
+    .switch-lg {
+        margin: 20px 0 0 40px;
+    }
+    
+    .switch-lg + label {
+        position: relative;
+        padding: 16px 0 0 100px;
+        line-height: 3em;
+    }
+    
+    .switch-lg + label:before {
+        width: 90px; /* x*5 */
+        height: 50px; /* x*3 */
+        border-radius: 40px; /* x*2 */
+    }
+    
+    .switch-lg + label:after {
+        width: 50px; /* x*3 */
+        height: 50px; /* x*3 */
+        border-radius: 40px; /* x*2 */
+    }
+
+    .switch-lg:checked + label:after {
+        margin-left: 40px; /* x*2 */
+    }
+
+    /*  ------------------- Number --------------------------*/
+
+    .number-input{
+        font-size: 35px;
+        height: 50;
+        border-radius: 40px;
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
+        width: 90px;
+        background: #fff;
+        border: 1px solid #d9d9d9;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+}

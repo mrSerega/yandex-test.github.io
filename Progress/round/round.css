@@ -8,21 +8,56 @@
 
 .progress__round_mode_active{
     animation-play-state: running;
-    -webkit-animation: running;
-    -o-animation: running;
-    -moz-animation: running;
-    -ms-animation: running;    
+    -webkit-animation-play-state: running;
+    -o-animation-play-state: running;
+    -moz-animation-play-state: running;
+    -ms-animation-play-state: running;    
 }
 
 .progress__round_mode_inactive{
     animation-play-state: paused;
-    -webkit-animation: paused;
-    -o-animation: paused;
-    -moz-animation: paused;
-    -ms-animation: paused; 
+    -webkit-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -ms-animation-play-state: paused; 
 }
 
 @keyframes spin{
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+
+@-webkit-keyframes spin{
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+@-o-keyframes spin{
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+@-moz-keyframes spin{
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+@-ms-keyframes spin{
     from {
         transform:rotate(0deg);
     }

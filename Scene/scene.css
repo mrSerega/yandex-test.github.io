@@ -47,38 +47,47 @@
 @media screen and (max-aspect-ratio: 10/1) and (min-aspect-ratio: 3/2){
     
     .scene__header{
-        width: 100vw;
-        height: 10vh;
+        width: 100%;
+        height: 10%;
         font-family: Arial;
     }
     
     .scene__progress{
         width: 50%;
         height: 50%;
-        float: left;
-        margin-left: auto;
-        margin-right: auto;
     }
     
     .scene__manager{
-        width: 50%;
-        height: 100%;
-        float: right;
         display: inline-block;
-        top: 0; 
-        vertical-align: middle;
-        background-color: red;
     }
     
-    .scene__container_manager{
-        position: fixed;
-        top: 0;
-        left: 0;
+    .scene__container_progress{
+        width: 47%;
+        height: 80%;
         display: flex;
+        float: left;
+        display: flex;
+        position: fixed;
         align-items: center;
         align-content: center; 
-        justify-content: center; 
-        overflow: auto;   
-        background-color: green;
+        justify-content: center;
+    }
+    
+       .scene__container_manager{
+        width: 47%;
+        height: 80%;   
+        float: right;
+        display: flex;
+        position: fixed;
+        align-items: center;
+        align-content: center; 
+        justify-content: center;
+        overflow: auto;  
+    } 
+    
+    .scene__container_container{
+        float :right;
+        width: 50%;
+        height: 100;
     }
 }

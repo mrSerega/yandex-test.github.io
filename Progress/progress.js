@@ -1,7 +1,7 @@
 /**
  * Создает экземпляр Progress
  * @class
- * @classdesc элемент progress отображает состнояние какого-либо процесса в процентах(от 0 до 100). Для использования блока необходимо на html странице создать div c некоторым className. Этот  className будет использоваться как уникальный идентифкатор для создания соответсвующего ему js объекта. Управление объекотм осуществляется по средство api. подробнее функции api описанны ниже. Так же неободимо поделючть соответсвующиее css (Progress/progress.css; Progress/circle/circle.css; Progress/round/round.css)
+ * @classdesc элемент progress отображает состнояние какого-либо процесса в процентах(от 0 до 100). Для использования блока необходимо на html странице создать div c некоторым className. Этот  className будет использоваться как уникальный идентифкатор для создания соответсвующего ему js объекта. Управление объекотм осуществляется по средством api. подробнее функции api описанны ниже. Так же неободимо подключить соответсвующиее css (Progress/progress.css; Progress/circle/circle.css; Progress/round/round.css)
  * @constructor
  * @this Progress
  * @param {string} id - className объекта div, который должен стать progress
@@ -107,7 +107,7 @@ Progress.prototype.setValue = function(value){
     bar.classList.toggle('progress__circle_bar-mode_animate');
     bar.classList.toggle('progress__circle_bar-mode_const');
     
-    //выставляеем параметры для новой анимации, включаем анимаюц, убераем заморозку
+    //выставляеем параметры для новой анимации, включаем анимацию, убераем заморозку
     var timeout1 = setTimeout(function(){
         bar.style.setProperty('--from',last);
         bar.style.setProperty('--to',value);

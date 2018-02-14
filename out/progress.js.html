@@ -1,49 +1,79 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: progress.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: progress.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
  * Создает экземпляр Progress
  * @class
- * @classdesc элемент progress отображает состнояние какого-либо процесса в процентах(от 0 до 100). Для использования блока необходимо на html странице создать div c некоторым className. Этот  className будет использоваться как уникальный идентифкатор для создания соответсвующего ему js объекта. Управление объекотм осуществляется по средство api. подробнее функции api описанны ниже. Так же неободимо поделючть соответсвующиее css (Progress/progress.css; Progress/circle/circle.css; Progress/round/round.css)
+ * @classdesc элемент progress отображает состнояние какого-либо процесса в процентах(от 0 до 100). Для использования блока необходимо на html странице создать div c некоторым className. Этот  className будет использоваться как уникальный идентифкатор для создания соответсвующего ему js объекта. Управление объекотм осуществляется по средство api. подробнее функции api описанны ниже.
  * @constructor
  * @this Progress
  * @param {string} id - className объекта div, который должен стать progress
  */
 function Progress(id){
-    //запминает последнее значение прогресса
+    /*запминает последнее значение прогресса*/
     this.lastValue = 0;
     
-    //получаем элемент, в который будет помещен progress (рабочий контейнер)
     this.progress = document.getElementsByClassName(id)[0];
         
-    //Создает svg графику (фоновый круг и loadBar)
-    let svgContent = '<svg ';
+    /*Создает svg графику (фоновый круг и loadBar)*/
+    let svgContent = '&lt;svg ';
     svgContent+='class=\'progress__round progress__round_mode_inactive\'';
     svgContent+='version=\''+this.svgVersion;
+    //svgContent+='\'x=\''+this.svgX;
+    //svgContent+='\'y=\''+this.svgY;
     svgContent+='\'viewbox=\''+this.svgViewbox;
-    svgContent+='\'><circle ';
+    svgContent+='\'>&lt;circle ';
     svgContent+='class=\'progress__circle progress__circle_back\' ';
     svgContent+='cx=\''+this.svgCircleCX
     svgContent+='\'cy=\''+this.svgCircleCY;
     svgContent+='\'r=\''+this.svgCircleR;
     svgContent+='\'transform=\''+this.svgCircleTransform;
-    svgContent+='\'/><circle ';
+    svgContent+='\'/>&lt;circle ';
     svgContent+='class=\'progress__circle progress__circle_bar progress__circle_bar-mode_animate\' ';
     svgContent+='cx=\''+this.svgCircleCX;
     svgContent+='\'cy=\''+this.svgCircleCY;
     svgContent+='\'r=\''+this.svgCircleR;
     svgContent+='\'transform=\''+this.svgCircleTransform;
-    svgContent+='\'/></svg>';
+    svgContent+='\'/>&lt;/svg>';
             
-    //помещаем графику в рабочий контейниер
     this.progress.innerHTML = svgContent;
     
-    //объект, который будет вращатся
+    /*объект, который будет вращатся*/
     this.progress__round = this.progress.getElementsByClassName('progress__round')[0];
     
-    //объект loadBar
+    /*объект loadBar*/
     this.progress__circle_bar = this.progress.getElementsByClassName('progress__circle_bar')[0];
 }
 
-//константы для отрисовки графики
+/*константы для отрисовки графики*/
 Progress.prototype.svgVersion = 1.1;
+//Progress.prototype.svgX = '0px';
+//Progress.prototype.svgY = '0px';
 Progress.prototype.svgViewbox = '0 0 110 110';
 
 Progress.prototype.svgCircleCX = 55;
@@ -59,7 +89,6 @@ Progress.prototype.svgCircleTransform = 'rotate(-90,55,55)';
  */
 Progress.prototype.setMode = function(modeType,modeValue){
     switch(modeType){
-        //управляем варщением объекта
         case 'animated':
             switch(modeValue){
                 case 'yes':
@@ -73,7 +102,7 @@ Progress.prototype.setMode = function(modeType,modeValue){
                     break;
             }
             break;
-        //управляем видимостью объекта    
+            
         case 'hide':
             switch(modeValue){
                 case 'yes':
@@ -96,18 +125,14 @@ Progress.prototype.setValue = function(value){
     let bar =  this.progress__circle_bar;
     let last = this.lastValue;
     
-    //обрабатываем значения выходящие за рамки 0 и 100
     if(value > 100) value = 100;
-    if(value < 0) value = 0;
+    if(value &lt; 0) value = 0;
     
-    //приводим значения процентов к абсолютному (315 -- длина окружности)
     value = value / 100 * 315;
     
-    //отключаем анимацию и замораживаем пргресс
     bar.classList.toggle('progress__circle_bar-mode_animate');
     bar.classList.toggle('progress__circle_bar-mode_const');
     
-    //выставляеем параметры для новой анимации, включаем анимаюц, убераем заморозку
     var timeout1 = setTimeout(function(){
         bar.style.setProperty('--from',last);
         bar.style.setProperty('--to',value);
@@ -115,6 +140,28 @@ Progress.prototype.setValue = function(value){
         bar.classList.toggle('progress__circle_bar-mode_const');
     },10);
 
-    //выставляем новое значение для "памаяти" пргресса
+
     this.lastValue = value;    
-}
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Progress.html">Progress</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Feb 14 2018 13:04:43 GMT+0300 (Russia TZ 2 Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

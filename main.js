@@ -1,4 +1,4 @@
-var input = document.getElementById('input');
+var input = document.getElementsByClassName('manager__input_number')[0];
 var animate_inpt = document.getElementById('round_inpt');
 var hide_inpt = document.getElementById('hide_inpt');
 

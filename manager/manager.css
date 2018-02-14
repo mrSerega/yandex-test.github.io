@@ -83,7 +83,7 @@
 
     /*  ------------------- Number --------------------------*/
 
-    .number-input{
+    .input_number{
         font-size: 20px;
         border-radius: 20px;
         -webkit-appearance: none;
@@ -133,7 +133,7 @@
 
     /*  ------------------- Number --------------------------*/
 
-    .number-input{
+    .input_number{
         font-size: 35px;
         height: 50;
         border-radius: 40px;
